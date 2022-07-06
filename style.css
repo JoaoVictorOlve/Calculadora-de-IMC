@@ -1,0 +1,252 @@
+@keyframes transition{
+    from {margin-top:100px;}
+    to {margin-top:0px}
+}
+
+/*====================================*/
+
+*{
+    margin:0;
+    padding:0;
+}
+
+@keyframes click{
+    from{background-color: rgb(063, 116, 172)}
+    to{background-color: rgb(035, 089, 142)}
+}
+
+body{
+    background-color:black;
+    display:flex;
+    height:100vh;
+    width:100vw;
+    justify-content:center;
+    align-items:center; 
+    
+}
+
+#content{
+    background-color:gray;
+    width:1000px;
+    height:500px;
+    display:grid;
+    grid-template-areas: "a1" "a1" "a2" "a2" "a2" "a2";
+    position:relative;
+    grid-auto-rows:84px;
+    margin-top:0px;
+    animation-name:transition;
+    animation-duration:1s;
+    transition-timing-function: ease-out;
+    z-index:2;
+}
+
+/*Header*/
+
+#content_header{
+    background-color:rgb(015,011,013);
+    grid-area:a1;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#header_text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    color:white;
+    font-size:1.5rem;
+}
+/*Middle*/
+
+#content_middle{ /*Middle background*/
+    grid-area:a2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:rgb(056,051,055);
+}
+
+.inputText{ /*Todos os input text*/
+    background-color:rgb(104,094,100);
+    width: 200px;
+    padding-left:14px;
+    padding-right:14px;
+    height:56px;
+    border:0;
+    border-radius:2px;
+    cursor:pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+    color:white;
+    font-weight:bold;
+}
+
+.inputText:hover, .inputText:focus, .inputText:active{
+    box-shadow: 0 0 20px rgba (0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.inputText::placeholder{
+    color:#949494;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.inputText, select {
+    outline:0;
+}
+
+.inputText::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#content_middle_inside{
+    display:block;
+}
+
+#measureText{
+    color:white;
+    text-align:center;
+    margin-top:7px;
+    margin-bottom:10px;
+    font-size:25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+
+
+
+#button{/*Submit*/
+    width:227px;
+    height:56px;
+    margin-top:20px;
+    border:0;
+    background-color:rgb(063, 116, 172);
+    border-radius:2px;
+    color:white;
+    font-weight:bold;
+    font-size:1.2rem;
+    cursor:pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+}
+
+#button:hover, #button:focus{
+    box-shadow: 0 0 20px rgba (0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+#button:active{
+    box-shadow: 0 0 20px rgba (0, 0, 0, 0.5);
+    transform: scale(1.1);
+    background-color: rgb(035, 089, 142);
+    animation-duration: 0.2s;
+    transition-timing-function: ease-out;
+    animation-name: click;
+
+}
+
+/*Second Middle*/
+
+#second_middle{
+    font-size:2rem;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+#second_middle h1{
+    margin-bottom:40px;
+}
+
+#second_middle p{
+    margin-bottom:20px;
+}
+
+#second_button{
+    width:227px;
+    height:56px;
+    margin-top:20px;
+    border:0;
+    border-radius:2px;
+    background-color:rgb(063, 116, 172);
+    color:white;
+    font-weight:bold;
+    font-size:1.2rem;
+    cursor:pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+}
+
+#second_button:hover, #second_button:focus{
+    box-shadow: 0 0 20px rgba (0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+#second_button:active{
+    box-shadow: 0 0 20px rgba (0, 0, 0, 0.5);
+    transform: scale(1.1);
+    animation-duration: 0.2s;
+    transition-timing-function: ease-out;
+    background-color: rgb(035, 089, 142);
+    animation-name: click;
+}
+
+#second_middle h1 {
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#second_middle p {
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/*Credits*/
+
+#credits {
+    color:white;
+    position:absolute;
+    bottom:20px;
+    z-index:1;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#credits a{
+    font-weight:bold;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    text-decoration:none;
+}
+
+#credits a:hover{
+    text-decoration: underline;
+}
+
+/*Error*/
+
+.notFilled{
+    text-align: center;
+    font-size:1.1rem;
+    color:red;
+}
+
+#notFilled1{
+    display:none;
+}
+
+#notFilled2{
+    display:none;
+}
